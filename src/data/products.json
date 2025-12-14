@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Leather Bag",
+    "price": 129.99,
+    "category": "Accessories",
+    "image": "/images/product-1.jpg",
+    "description": "Handcrafted genuine leather bag with brass hardware."
+  },
+  {
+    "id": 2,
+    "name": "Wool Blend Coat",
+    "price": 249.99,
+    "category": "Outerwear",
+    "image": "/images/product-2.jpg",
+    "description": "Premium wool blend coat for the modern professional."
+  },
+  {
+    "id": 3,
+    "name": "Silk Scarf",
+    "price": 79.99,
+    "category": "Accessories",
+    "image": "/images/product-3.jpg",
+    "description": "Luxurious 100% silk scarf with artisan print."
+  },
+  {
+    "id": 4,
+    "name": "Cashmere Sweater",
+    "price": 189.99,
+    "category": "Knitwear",
+    "image": "/images/product-4.jpg",
+    "description": "Ultra-soft pure cashmere in timeless design."
+  },
+  {
+    "id": 5,
+    "name": "Leather Boots",
+    "price": 299.99,
+    "category": "Footwear",
+    "image": "/images/product-5.jpg",
+    "description": "Italian leather ankle boots with elegant heel."
+  },
+  {
+    "id": 6,
+    "name": "Linen Blazer",
+    "price": 169.99,
+    "category": "Outerwear",
+    "image": "/images/product-6.jpg",
+    "description": "Breathable summer linen blazer, tailored fit."
+  },
+  {
+    "id": 7,
+    "name": "Gold Watch",
+    "price": 459.99,
+    "category": "Accessories",
+    "image": "/images/product-7.jpg",
+    "description": "Minimalist gold-plated watch with leather strap."
+  },
+  {
+    "id": 8,
+    "name": "Cotton Dress",
+    "price": 119.99,
+    "category": "Dresses",
+    "image": "/images/product-8.jpg",
+    "description": "Elegant midi dress in organic cotton."
+  }
+]
