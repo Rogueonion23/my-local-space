@@ -1,6 +1,15 @@
-import { ShoppingBag, Search } from 'lucide-react';
+import { ShoppingBag, Search, User, LogOut } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
+import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 interface HeaderProps {
   searchQuery: string;
@@ -9,6 +18,8 @@ interface HeaderProps {
 
 const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
   const { totalItems, setIsCartOpen } = useCart();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
@@ -35,20 +46,53 @@ const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
             </div>
           </div>
 
-          {/* Cart Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsCartOpen(true)}
-            className="relative"
-          >
-            <ShoppingBag className="h-5 w-5" />
-            {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 h-5 w-5 bg-accent text-accent-foreground text-xs rounded-full flex items-center justify-center font-medium animate-scale-in">
-                {totalItems}
-              </span>
+          {/* User & Cart Buttons */}
+          <div className="flex items-center gap-2">
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <User className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <div className="px-2 py-1.5">
+                    <p className="text-sm font-medium">{user.name}</p>
+                    <p className="text-xs text-muted-foreground">{user.email}</p>
+                  </div>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={logout} className="text-destructive cursor-pointer">
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Sign out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => navigate('/auth')}
+                className="gap-2"
+              >
+                <User className="h-4 w-4" />
+                <span className="hidden sm:inline">Sign In</span>
+              </Button>
             )}
-          </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsCartOpen(true)}
+              className="relative"
+            >
+              <ShoppingBag className="h-5 w-5" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 h-5 w-5 bg-accent text-accent-foreground text-xs rounded-full flex items-center justify-center font-medium animate-scale-in">
+                  {totalItems}
+                </span>
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Search */}
