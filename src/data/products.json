@@ -62,5 +62,37 @@
     "category": "Dresses",
     "image": "/images/product-8.jpg",
     "description": "Elegant midi dress in organic cotton."
+  },
+  {
+    "id": 9,
+    "name": "Leather Gloves",
+    "price": 89.99,
+    "category": "Accessories",
+    "image": "/images/product-9.jpg",
+    "description": "Premium leather gloves with cashmere lining."
+  },
+  {
+    "id": 10,
+    "name": "Designer Sunglasses",
+    "price": 159.99,
+    "category": "Accessories",
+    "image": "/images/product-10.jpg",
+    "description": "UV-protected polarized lenses with classic frame."
+  },
+  {
+    "id": 11,
+    "name": "Premium T-Shirt",
+    "price": 49.99,
+    "category": "Tops",
+    "image": "/images/product-11.jpg",
+    "description": "Soft organic cotton t-shirt with perfect fit."
+  },
+  {
+    "id": 12,
+    "name": "Leather Belt",
+    "price": 69.99,
+    "category": "Accessories",
+    "image": "/images/product-12.jpg",
+    "description": "Genuine leather belt with brushed metal buckle."
   }
 ]
